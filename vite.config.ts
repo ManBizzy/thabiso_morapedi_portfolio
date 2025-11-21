@@ -11,7 +11,6 @@ import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 const plugins = [react(), tailwindcss()];
 
 export default defineConfig({
-  base: "/thabiso_morapedi_portfolio/",
   plugins,
   resolve: {
     alias: {
