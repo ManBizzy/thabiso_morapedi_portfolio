@@ -2,6 +2,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
+  const baseUrl = import.meta.env.BASE_URL;
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -42,7 +43,7 @@ export default function Home() {
                   Get in Touch
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href={`${baseUrl}resume.pdf`}
                   download="Thabiso_Morapedi_Resume.pdf"
                   className="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-colors"
                 >
@@ -73,7 +74,7 @@ export default function Home() {
               <div className="relative w-full max-w-sm">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-muted rounded-2xl blur-2xl"></div>
                 <img
-                  src="/profile-photo.jpeg"
+                  src={`${baseUrl}profile-photo.jpeg`}
                   alt="Thabiso C. Morapedi"
                   className="relative w-full h-auto rounded-2xl shadow-lg object-cover"
                 />
@@ -100,7 +101,7 @@ export default function Home() {
               <div className="w-full max-w-2xl">
                 <div className="relative bg-background rounded-lg shadow-lg overflow-hidden border border-border">
                   <iframe
-                    src="/degree-certificate.pdf"
+                    src={`${baseUrl}degree-certificate.pdf`}
                     className="w-full h-96 md:h-[600px]"
                     title="Degree Certificate"
                   />
