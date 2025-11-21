@@ -2,6 +2,7 @@
   "name": "thabiso_morapedi_portfolio",
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://manbizzy.github.io/thabiso_morapedi_portfolio/",
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
