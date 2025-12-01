@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
@@ -12,7 +12,7 @@ import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-function Router() {
+function Routes() {
   return (
     <>
       <Navigation />
@@ -37,6 +37,8 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL;
+  
   return (
     <ErrorBoundary>
       <ThemeProvider
@@ -45,9 +47,11 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <div className="flex flex-col min-h-screen">
-            <Router />
-          </div>
+          <Router base={baseUrl}>
+            <div className="flex flex-col min-h-screen">
+              <Routes />
+            </div>
+          </Router>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
